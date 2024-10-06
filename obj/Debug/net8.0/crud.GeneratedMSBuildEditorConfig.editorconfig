@@ -18,16 +18,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = c:\C#\crud
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/C\#/crud/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [c:/C\#/crud/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/C\#/crud/Views/Home/Registros.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3Ryb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/C\#/crud/Views/Reporte/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/C\#/crud/Views/Reporte/RegistrosEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVwb3J0ZVxSZWdpc3Ryb3NFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/C\#/crud/Views/Shared/Error.cshtml]

@@ -34,9 +34,13 @@
                         <input type="hidden" name="id" value="@registro.Id" />
                         <button type="submit" class="btn btn-danger">Eliminar</button>
                     </form>
+                    <a asp-action="Editar" asp-route-id="@registro.Id" class="btn btn-warning">Editar</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
 }
+
+<a href="@Url.Action("Crear", "Reporte")" class="btn btn-primary mb-3">Nuevo Registro</a>
+

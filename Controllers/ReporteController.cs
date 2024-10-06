@@ -1,6 +1,6 @@
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.AspNetCore.Mvc;
 using crud.Models;
 
 public class ReporteController : Controller
@@ -9,8 +9,12 @@ public class ReporteController : Controller
 
     public ActionResult Index()
     {
-        // Podríamos pasar los registros y las estadísticas al modelo de la vista
-        return View(registros);
+        return View( registros);
+    }
+
+    public ActionResult Crear()
+    {
+        return View("RegistrosEdit", new Reporte());
     }
 
     [HttpPost]
@@ -18,6 +22,35 @@ public class ReporteController : Controller
     {
         nuevoRegistro.Id = registros.Count + 1; // Simulamos un Id único
         registros.Add(nuevoRegistro);
+        return RedirectToAction("Index");
+    }
+
+    public ActionResult Editar(int id)
+    {
+        var registro = registros.FirstOrDefault(r => r.Id == id);
+        if (registro == null)
+        {
+            return NotFound();
+        }
+
+        return View("RegistrosEdit", registro);
+    }
+
+    [HttpPost]
+    public ActionResult GuardarCambios(Reporte registroActualizado)
+    {
+        var registro = registros.FirstOrDefault(r => r.Id == registroActualizado.Id);
+        if (registro != null)
+        {
+            // Actualizamos el registro existente
+            registro.Fecha = registroActualizado.Fecha;
+            registro.Descripcion = registroActualizado.Descripcion;
+            registro.CostoEstimado = registroActualizado.CostoEstimado;
+            registro.Muertos = registroActualizado.Muertos;
+            registro.Heridos = registroActualizado.Heridos;
+            registro.VehiculosInvolucrados = registroActualizado.VehiculosInvolucrados;
+        }
+
         return RedirectToAction("Index");
     }
 
@@ -31,7 +64,6 @@ public class ReporteController : Controller
         return RedirectToAction("Index");
     }
 
-    // Método para obtener estadísticas
     public ActionResult Estadisticas()
     {
         var estadisticas = new EstadisticasViewModel
@@ -43,7 +75,6 @@ public class ReporteController : Controller
             TotalCostosEstimados = registros.Sum(r => r.CostoEstimado)
         };
 
-        return View("Estadisticas", estadisticas); // Vista separada para estadísticas
+        return View("Estadisticas", estadisticas);
     }
 }
-

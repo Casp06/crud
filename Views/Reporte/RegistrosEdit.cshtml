@@ -1,0 +1,55 @@
+@model crud.Models.Reporte
+
+<h3>@(Model.Id == 0 ? "Nuevo Registro" : "Editar Registro")</h3>
+
+<form asp-action="@(Model.Id == 0 ? "Crear" : "GuardarCambios")" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="mb-3">
+        <label for="fecha" class="form-label">Fecha</label>
+        <input asp-for="Fecha" class="form-control" />
+        <span asp-validation-for="Fecha" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripcion</label>
+        <textarea asp-for="Descripcion" class="form-control"></textarea>
+        <span asp-validation-for="Descripcion" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label for="CostoEstimado" class="form-label">Costo Estimado</label>
+        <input asp-for="CostoEstimado" class="form-control" />
+        <span asp-validation-for="CostoEstimado" class="text-danger"></span>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="Muertos" class="form-label">Muertos</label>
+                <input asp-for="Muertos" class="form-control" />
+                <span asp-validation-for="Muertos" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="Heridos" class="form-label">Heridos</label>
+                <input asp-for="Heridos" class="form-control" />
+                <span asp-validation-for="Heridos" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <div class="mb-3">
+                <label for="VehiculosInvolucrados" class="form-label">Vehículos Involucrados</label>
+                <input asp-for="VehiculosInvolucrados" class="form-control" />
+                <span asp-validation-for="VehiculosInvolucrados" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+</form>

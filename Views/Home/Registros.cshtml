@@ -1,0 +1,31 @@
+@model crud.Models.Reporte
+
+@{
+    ViewData["Title"] = "Registrar Reporte";
+}
+
+<h1>Registrar Reporte</h1>
+
+<form asp-action="Crear" method="post" class="row">
+    <div class="form-group mb-4 col-6">
+        <label for="Muertos">Muertos</label>
+        <input type="number" class="form-control" name="Muertos" required />
+    </div>
+    <div class="form-group mb-4 col-6">
+        <label for="Heridos">Heridos</label>
+        <input type="number" class="form-control" name="Heridos" required />
+    </div>
+    <div class="form-group mb-4 col-6">
+        <label for="VehiculosInvolucrados">Vehículos Involucrados</label>
+        <input type="number" class="form-control" name="VehiculosInvolucrados" required />
+    </div>
+    <div class="form-group mb-4 col-6">
+        <label for="CostoEstimado">Costo Estimado</label>
+        <input type="number" class="form-control" name="CostoEstimado" required />
+    </div>
+    <div class="form-group mb-4">
+        <label for="Descripcion">Descripcion</label>
+        <textarea class="form-control" id="Descripcion" name="Descripcion" required > </textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Registrar</button>
+</form>
